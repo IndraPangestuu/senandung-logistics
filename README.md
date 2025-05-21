@@ -25,7 +25,7 @@ Website resmi untuk PT Senandung Melodi Sejahtera, dibangun menggunakan **React.
 
 ## 📦 Instalasi & Menjalankan Project
 
-Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal kamu:
+Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal:
 
 ### 1. Clone Repository
 
