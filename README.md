@@ -30,8 +30,8 @@ Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal:
 ### 1. Clone Repository
 
 ``bash
-git clone https://github.com/username-kamu/nama-repo-kamu.git
-cd nama-repo-kamu
+git clone https://github.com/IndraPangestuu/senandung-logistics.git
+cd senandung-logistics
 
 ### 2. Install Dependency
 
