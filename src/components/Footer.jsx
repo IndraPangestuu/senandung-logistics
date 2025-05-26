@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Kontak */}
         <div>
           <h4 className="text-lg font-semibold mb-4">Hubungi Kami</h4>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-2">
               <MapPin size={16} /> Jl. Contoh No. 123, Jakarta
             </li>
@@ -29,11 +29,13 @@ const Footer = () => {
 
         {/* Sosial Media */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">Ikuti Kami</h4>
-          <div className="flex space-x-4">
+          <h4 className="text-lg font-semibold mb-8">Ikuti Kami</h4>
+          <div dir="rtl">
+          <div className="ps-30 flex space-x-4">
             <a href="#" className="hover:text-gray-200"><Facebook size={20} /></a>
             <a href="#" className="hover:text-gray-200"><Instagram size={20} /></a>
             <a href="#" className="hover:text-gray-200"><Linkedin size={20} /></a>
+            </div>
           </div>
         </div>
       </div>

@@ -7,7 +7,6 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import QuoteForm from './components/QuoteForm';
-import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
     <AboutSection />
     <ServicesSection />
     <QuoteForm />
-    <FAQSection />
     <Footer />
    </div>
   )

@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className="relative h-[90vh] w-full">
+    <div className="full h-[90vh] w-full">
       {/* Background Image */}
       <img
         src="/hero.jpg"
