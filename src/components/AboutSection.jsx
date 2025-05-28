@@ -1,11 +1,21 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-white px-4 md:px-10 lg:px-20">
+    <motion.section 
+      className="py-16 bg-white px-4 md:px-10 lg:px-20"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Text Area */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Ahli <span className="text-orange-600">Impor-Ekspor</span> dan{' '}
             <span className="text-orange-600">Distribusi</span> untuk Seluruh Indonesia
@@ -21,10 +31,15 @@ const AboutSection = () => {
             yang aman, efisien, dan profesional menjadikan kami mitra logistik andalan Anda di Indonesia.
             <span className="text-blue-600"> - Read More</span>
           </p>
-        </div>
+        </motion.div>
 
         {/* Image Area */}
-        <div className="grid grid-cols-2 gap-4">
+        <motion.div
+          className="grid grid-cols-2 gap-4"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
           <img
             src="/worker1.jpg"
             alt="Pekerja Logistik"
@@ -35,9 +50,9 @@ const AboutSection = () => {
             alt="Gudang"
             className="rounded-lg shadow-md w-full h-auto object-cover"
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
