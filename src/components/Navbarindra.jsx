@@ -19,7 +19,7 @@ const Navbarindra = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex text-[#0C2D57] text-balance text-lg space-x-8 px-20 gap-4">
             <a href="/" className="hover:text-blue-500 font-medium">Home</a>
-            <a href="#" className="hover:text-blue-500 font-medium">About</a>
+            <a href="/about" className="hover:text-blue-500 font-medium">About</a>
             <a href="#" className="hover:text-blue-500 font-medium">Services</a>
             <a href="#" className="hover:text-blue-500 font-medium">Contact Us</a>
           </div>
