@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`bg-white border-t-4 shadow-sm z-30 fixed top-0 left-0 right-0 transition-all duration-300 ${scrolled ? 'py-2 shadow-md' : 'py-4'}`}>
+    <nav className={`bg-white border-t-1 shadow-sm z-30 fixed top-0 left-0 right-0 transition-all duration-300 ${scrolled ? 'py-2 shadow-md' : 'py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img
