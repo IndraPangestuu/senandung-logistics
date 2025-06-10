@@ -1,20 +1,23 @@
-import React, { Suspense, lazy } from 'react';
-
-const HeroSection = lazy(() => import('../components/HeroSection'));
-import AboutSection from '../components/AboutSection';
-import ServicesSection from '../components/ServicesSection';
-import QuoteForm from '../components/QuoteForm';
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'
+import Section1 from '../content/Home/section1';
+import Section2 from '../content/Home/section2';
+import Section3 from '../content/Home/section3';
 
 function HomePage() {
   return (
-    <div>
-      <Suspense fallback={<div>Loading Hero Section...</div>}>
-        <HeroSection />
-      </Suspense>
-      <AboutSection />
-      <ServicesSection />
-      <QuoteForm />
-    </div>
+    <>
+      <Navbar />
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          <Section1 />
+          <Section2 />
+          <Section3 />
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 }
 

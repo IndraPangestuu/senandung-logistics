@@ -1,16 +1,15 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { div } from 'framer-motion/client';
+import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
-const footer = () => {
+const Footer = () => {
   return (
-    <footer className="bg-[#0C2D57] px-4 md:px-12 pt-12 pb-6">
-      <div className="max-w-2xl flex flex-col md:flex-row justify-between gap-12 text-white text-base">
+    <div className="bg-[#0C2D57] h-fit px-4 md:px-12 pt-12 pb-6 text-white">
+      <div className="max-w-6xl grid grid-cols-1 md:grid-cols-[1fr_0.5fr_1fr] gap-6 text-sm md:text-base">
         {/* Alamat & Kontak */}
-        <div className="flex-1 space-y-4 text-left">
+        <div className="space-y-4">
+          <h3 className="font-semibold text-lg">Contact Us</h3>
           <div className="flex items-start gap-3">
-            <MapPin size={24} className="mt-1" />
-            <p className="break-words">
+            <MapPin size={18} className="mt-1" />
+            <p className="break-words leading-relaxed">
               Jalan Gunung Sahari 1, Blok B No.31 Lt. LG, Jakarta Utara,
               Daerah Khusus Ibukota Jakarta 14420
             </p>
@@ -28,30 +27,47 @@ const footer = () => {
         </div>
 
         {/* Link Navigasi */}
-        <div className="flex flex-col gap-2">
-          <h2 className="font-semibold text-lg">Links</h2>
-          <p>Home</p>
-          <p>Services</p>
-          <p>Contact</p>
+        <div className="max-w-3xl grid gap-12 text-sm md:text-base">
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Links</h3>
+            <ul className="space-y-2">
+              <li><a href="/" className="hover:text-orange-500 transition-colors duration-200">Home</a></li>
+              <li><a href="/services" className="hover:text-orange-500 transition-colors duration-200">Services</a></li>
+              <li><a href="/about" className="hover:text-orange-500 transition-colors duration-200">About Us</a></li>
+              <li><a href="/contact" className="hover:text-orange-500 transition-colors duration-200">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
 
         {/* Layanan */}
-        <div className="flex flex-col gap-2">
-          <h2 className="font-semibold text-lg">Services</h2>
-          <p>Air Freight</p>
-          <p>Sea Freight</p>
-          <p>Door to Door</p>
+        <div className="space-y-4">
+          <h3 className="font-semibold text-lg">Our Services</h3>
+          <ul className="space-y-2">
+            <li><a href="" className="hover:text-orange-500 transition-colors duration-200">Air Freight</a></li>
+            <li><a href="" className="hover:text-orange-500 transition-colors duration-200">Sea Freight</a></li>
+            <li><a href="" className="hover:text-orange-500 transition-colors duration-200">Door to Door</a></li>
+          </ul>
+
+          {/* Media Sosial */}
+          <div className="flex space-x-4 mt-6">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+              <Facebook size={20} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
+              <Instagram size={20} />
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="mt-40 border-t border-white/30 pt-8 text-center text-white/50 text-sm">
-        <p className="leading-tight px-2">
-          Copyright ©2025 PT Senandung Melodi Sejahtera. All Rights Reserved.
+      <div className="mt-12 border-t border-white/30 pt-6 text-center text-white/50 text-xs md:text-sm">
+        <p className="leading-tight">
+          Copyright © {new Date().getFullYear()} PT Senandung Melodi Sejahtera. All Rights Reserved.
         </p>
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default footer;
+export default Footer;

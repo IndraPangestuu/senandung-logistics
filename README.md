@@ -1,45 +1,12 @@
-# 🌐 PT Senandung Melodi Sejahtera - Logistics Website
+# React + Vite
 
-Website resmi untuk PT Senandung Melodi Sejahtera, dibangun menggunakan **React.js**, **Tailwind CSS v4**, dan **Vite** untuk performa optimal dan kemudahan pengembangan.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Fitur Utama
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Navigasi responsif (desktop & mobile)
-- Hero section menarik
-- Fitur layanan (air freight, sea freight, door-to-door)
-- Formulir Quote & FAQ section
-- Desain modern dengan Tailwind CSS v4
+## Expanding the ESLint configuration
 
----
-
-## 🛠️ Teknologi yang Digunakan
-
-- [React.js](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS v4](https://tailwindcss.com/)
-- [GitHub](https://github.com/)
-
----
-
-## 📦 Instalasi & Menjalankan Project
-
-Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal:
-
-### 1. Clone Repository
-
-``bash
-- git clone https://github.com/IndraPangestuu/senandung-logistics.git
-- cd senandung-logistics
-
-### 2. Install Dependency
-
-- pastikan vscode sudah membuka folder project
-- buka Teriminal di Vscode 
-- npm install
-
-### 2. Test Project
-
-- Buka Terminal
-- npm run dev
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -1,35 +1,26 @@
-import React, { Suspense, lazy } from 'react';
+import React, { useState, lazy} from 'react'
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/Navbarindra';
-import Footer from './components/Footer';
-import SEO from './components/SEO';
-
+import './app.css'
+// import { Navbar as NavbarFM } from '@heroui/react'
+// import Navbar from './components/Navbar'
+// import Footer from './components/Footer'
 const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
 
-import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
     <div>
-      <SEO />
-      <Navbar />
-      <ErrorBoundary>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </Suspense>
-      </ErrorBoundary>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUsPage />} />
+        {/* <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactPage />} /> */}
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
