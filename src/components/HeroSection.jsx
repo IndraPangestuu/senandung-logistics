@@ -14,7 +14,7 @@ const HeroSection = ({ imageSrc, title, subTitle, height = "h-[90vh]", textSize 
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-white text-[7vw] md:text-5xl font-bold text-center leading-tight">
+          <h1 className="text-white text-[7vw] md:text-5xl font-bold text-center leading-normal">
             <span className='block'>{title}</span>
             <span className={`${textSize} block`}>{subTitle}</span>
           </h1>

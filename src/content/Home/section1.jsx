@@ -3,7 +3,6 @@
 import operator from "./icon/operator.jpg";
 import operator2 from "./icon/operator2.jpg";
 
-
 const Section1 = () => {
   return (
     <section className="bg-white py-45">

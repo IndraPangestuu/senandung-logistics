@@ -6,7 +6,7 @@ import './app.css'
 // import Footer from './components/Footer'
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
-
+const AirFreight = lazy(() => import('./pages/AirFreight'));
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/services/AirFreight" element={<AirFreight />} />
         {/* <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} /> */}
       </Routes>
