@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar3d';
 import HeroSection from '../components/HeroSection';
 import heroImage from '../assets/hero2.jpg';
 import Section1 from "../content/ServicesContent/section1";
 import Section2 from "../content/ServicesContent/section2";
-import Footer from '../components/Footer'
+import Footer from '../components/Footer3d'
 
 function AirFreight() {
   return(
