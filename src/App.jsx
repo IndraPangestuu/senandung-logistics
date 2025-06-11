@@ -1,12 +1,14 @@
 import React, { useState, lazy} from 'react'
 import { Routes, Route } from 'react-router-dom';
-import './app.css'
+import './App.css';
 // import { Navbar as NavbarFM } from '@heroui/react'
 // import Navbar from './components/Navbar'
 // import Footer from './components/Footer'
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
 const AirFreight = lazy(() => import('./pages/AirFreight'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,9 +21,11 @@ function App() {
         <Route path="/services/AirFreight" element={<AirFreight />} />
         {/* <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} /> */}
+        {/* <Route path="/services" element={<ServicesPage />} /> */}
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>
   )
 }
 
-export default App
+export default App;
