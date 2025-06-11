@@ -1,6 +1,6 @@
 import React, { useState, lazy} from 'react'
 import { Routes, Route } from 'react-router-dom';
-import './app.css'
+import './App.css';
 // import { Navbar as NavbarFM } from '@heroui/react'
 // import Navbar from './components/Navbar'
 // import Footer from './components/Footer'
@@ -24,4 +24,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
