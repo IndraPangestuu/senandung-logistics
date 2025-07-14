@@ -11,7 +11,7 @@ const Section1 = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold leading-snug text-gray-800 mb-6">
             Ahli <span className="text-orange-600">Impor-Ekspor</span> dan{" "}
@@ -36,7 +36,7 @@ const Section1 = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5}}
         >
           <div className="relative w-fit">
             <img

@@ -28,13 +28,13 @@ const services = [
 
 const Section2 = () => {
   return (
-    <section className="py-20 px-4 text-center max-w-7xl mx-auto font-roboto bg-[#F9FAFB]">
+    <section className="py-20 px-4 text-center max-w-7xl mx-auto font-roboto bg-[#F9FAFB] mt-20">
       {/* Judul */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2}}
+        viewport={{ once: true, amount: 0.3}}
       >
         <h2 className="text-3xl md:text-4xl font-bold text-orange-500">Our Service</h2>
         <p className="text-xl md:text-2xl font-medium mt-2 text-gray-800">
@@ -52,7 +52,7 @@ const Section2 = () => {
             initial={{ opacity: 0, y: 50, rotateX: 5 }}
             whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3}}
             style={{
               perspective: 1000,
               transformStyle: 'preserve-3d',
