@@ -66,8 +66,8 @@ const Section3 = () => {
           className="bg-white rounded-2xl p-8 shadow-xl w-full lg:w-1/2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, amount: 0.3}}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2}}
         >
           <p className="text-lg font-semibold text-gray-800">
             <span className="text-blue-900">Know the price</span>
@@ -106,31 +106,30 @@ const Section3 = () => {
 
         {/* FAQ Section */}
         <motion.div
-          className="w-full lg:w-1/2"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.3}}
-          layout
-        >
-          <h3 className="text-lg font-medium text-black">Frequently Asked Questions</h3>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mt-2 mb-6">
-            Delivering Excellence in Logistics
-          </h2>
+        className="w-full max-w-full lg:w-1/2 px-4 box-border"
+        initial={{ opacity: 0, x: 0 }} // Hindari efek geser horizontal yang bisa sebabkan overflow
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <h3 className="text-base md:text-lg font-medium text-black">Frequently Asked Questions</h3>
+        <h2 className="text-xl md:text-3xl font-bold text-gray-100 mt-2 mb-6">
+          Delivering Excellence in Logistics
+        </h2>
 
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <FAQItem
-                key={idx}
-                index={idx}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openIndex === idx}
-                onClick={toggleFAQ}
-              />
-            ))}
-          </div>
-        </motion.div>
+        <div className="space-y-4">
+          {faqs.map((faq, idx) => (
+            <FAQItem
+              key={idx}
+              index={idx}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === idx}
+              onClick={toggleFAQ}
+            />
+          ))}
+        </div>
+      </motion.div>
       </div>
     </section>
   );

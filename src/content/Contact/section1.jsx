@@ -8,8 +8,8 @@ const contactInfo = [
     text: (
       <>
         Jalan Gunung Sahari 1, Blok B No.31 Lt. LG, <br />
-        Jakarta Utara, Daerah Khusus Ibukota <br />
-        Jakarta 14420
+        Jakarta Utara, Daerah Khusus Ibukota, <br />
+        Jakarta-14420
       </>
     ),
   },
@@ -32,7 +32,7 @@ const Section1 = () => {
   return (
     <div className="bg-white py-16 px-6 md:px-20 text-center">
       <motion.h2
-        className="text-2xl md:text-3xl font-bold text-black mb-12"
+        className="text-xl md:text-3xl font-bold text-black mb-12"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}

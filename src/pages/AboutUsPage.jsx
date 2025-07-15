@@ -26,13 +26,9 @@ function AboutUs() {
         textSize='text-[2.5vw] sm:text-sm'
       />
       <TempInactiveSection>
-        <div className="min-h-screen flex flex-col px-20 lg:px-20">
-          <main className="flex-grow">
-            <Section1 />
-            <Section2 />
-            <Section3 />
-          </main>
-        </div>
+        <Section1 />
+        <Section2 />
+        <Section3 />
       </TempInactiveSection>
       <Footer />
     </>

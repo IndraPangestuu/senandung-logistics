@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo_senandung/logo_mendatar_senandung.png';
 import { FaBars, FaTimes, FaHome, FaInfoCircle, FaCog, FaPhone } from 'react-icons/fa';
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
@@ -12,6 +12,7 @@ const Navbar = () => {
   const navRef = useRef(null);
   const dropdownTimeoutRef = useRef(null);
   const [isHover, setIsHover] = useState(false);
+  const navigate = useNavigate();
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
@@ -30,13 +31,25 @@ const Navbar = () => {
   }, []);
 
   const toggleDropdown = useCallback(() => {
-    setIsDropdownOpen(prev => !prev);
+    setTimeout(() => {
+      setIsDropdownOpen(prev => !prev);
+    }, 100)
   }, []);
 
   const closeMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(false);
-    setIsDropdownOpen(false);
-  }, []);
+    setTimeout(() => {
+      setIsMobileMenuOpen(false);
+      setIsDropdownOpen(false);
+    }, 200);
+  }, [setIsMobileMenuOpen]);
+
+  // Handle link with delay before navigation
+  const handleDelayedNav = (to) => {
+    closeMobileMenu();
+    setTimeout(() => {
+      navigate(to);
+    }, 200);
+  };
 
   const handleMouseEnter = useCallback(() => {
     if (dropdownTimeoutRef.current) {
@@ -170,95 +183,93 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div ref={navRef}>
-          <motion.ul
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden p-4 space-y-2"
-          >
-            <li className='border-b border-gray-400'>
-              <Link
-                to="/"
-                className="flex items-center hover:text-orange-500 transition py-3"
-                onClick={closeMobileMenu}
-              >
-                <FaHome className="mr-2"/> Home
-              </Link>
-            </li>
+      <div ref={navRef}>
+        <motion.ul
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          className="md:hidden p-4 space-y-2"
+        >
+          {/* Home */}
+          <li className='border-b border-gray-400'>
+            <button
+              onClick={() => handleDelayedNav('/')}
+              className="w-full text-left flex items-center py-3 transition-colors text-black active:text-orange-500"
+            >
+              <FaHome className="mr-2" /> Home
+            </button>
+          </li>
 
-            <li className='border-b border-gray-400'>
-              <button
-                onClick={toggleDropdown}
-                className="w-full flex items-center justify-between hover:text-orange-500 py-3 text-left"
-                aria-expanded={isDropdownOpen}
-              >
-                <span className="flex items-center">
-                  <FaCog className="mr-2" /> Services
-                </span>
-                <FiChevronRight className={`transition-transform ${isDropdownOpen ? 'rotate-90' : ''}`} />
-              </button>
+          {/* Services Dropdown */}
+          <li className='border-b border-gray-400'>
+            <button
+              onClick={toggleDropdown}
+              className="w-full flex items-center justify-between transition-colors text-black active:text-orange-500 py-3 text-left"
+              aria-expanded={isDropdownOpen}
+            >
+              <span className="flex items-center">
+                <FaCog className="mr-2" /> Services
+              </span>
+              <FiChevronRight className={`transition-transform ${isDropdownOpen ? 'rotate-90' : ''}`} />
+            </button>
 
-              {isDropdownOpen && (
-                <motion.ul
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="ml-6 mt-2 space-y-2 pb-2 overflow-hidden"
-                >
-                  <li>
-                    <Link
-                      to="/services/AirFreight"
-                      className="hover:text-orange-500 block py-2 transition"
-                      onClick={closeMobileMenu}
-                    >
-                      Air Freight
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/AirFreight"
-                      className="hover:text-orange-500 block py-2 transition"
-                      onClick={closeMobileMenu}
-                    >
-                      Sea Freight
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/AirFreight"
-                      className="hover:text-orange-500 block py-2 transition"
-                      onClick={closeMobileMenu}
-                    >
-                      Door To Door
-                    </Link>
-                  </li>
-                </motion.ul>
-              )}
-            </li>
-
-            <li className='border-b border-gray-400'>
-              <Link
-                to="/about"
-                className="flex items-center hover:text-orange-500 py-3 transition"
-                onClick={closeMobileMenu}
+            {isDropdownOpen && (
+              <motion.ul
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="ml-6 mt-2 space-y-2 pb-2 overflow-hidden"
               >
-                <FaInfoCircle className="mr-2" /> About Us
-              </Link>
-            </li>
+                <li>
+                  <button
+                    onClick={() => handleDelayedNav('/services/AirFreight')}
+                    className="w-full text-left block py-2 transition-colors text-black active:text-orange-500"
+                  >
+                    Air Freight
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleDelayedNav('/services/SeaFreight')}
+                    className="w-full text-left block py-2 transition-colors text-black active:text-orange-500"
+                  >
+                    Sea Freight
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleDelayedNav('/services/DoorToDoor')}
+                    className="w-full text-left block py-2 transition-colors text-black active:text-orange-500"
+                  >
+                    Door To Door
+                  </button>
+                </li>
+              </motion.ul>
+            )}
+          </li>
 
-            <li className='border-b border-gray-400'>
-              <Link
-                to="/contact"
-                className="flex items-center hover:text-orange-500 py-3 transition"
-                onClick={closeMobileMenu}
-              >
-                <FaPhone className="mr-2" /> Contact Us
-              </Link>
-            </li>
-          </motion.ul>
-        </div>
+          {/* About */}
+          <li className='border-b border-gray-400'>
+            <button
+              onClick={() => handleDelayedNav('/about')}
+              className="w-full text-left flex items-center text-black active:text-orange-500 py-3 transition-colors"
+            >
+              <FaInfoCircle className="mr-2" /> About Us
+            </button>
+          </li>
+
+          {/* Contact */}
+          <li className='border-b border-gray-400'>
+            <button
+              onClick={() => handleDelayedNav('/contact')}
+              className="w-full text-left flex items-center text-black active:text-orange-500 py-3 transition-colors"
+            >
+              <FaPhone className="mr-2" /> Contact Us
+            </button>
+          </li>
+        </motion.ul>
+      </div>
       )}
     </motion.nav>
   );

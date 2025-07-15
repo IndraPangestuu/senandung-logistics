@@ -17,11 +17,14 @@ const Section3 = () => {
           <h2 className="text-4xl font-bold text-[#0C2D57] md:leading-snug">
             Get the Best and Most Transparent Air Freight Quote Today
           </h2>
-          <p className="mt-3 text-[#505050] text-sm md:text-base">
+          <p className="mt-3 text-[#505050] text-base">
             Solusi impor cepat, aman, dan legal dari titik asal hingga tujuan akhir.
-            <a href="#" className="text-[#FF5722] font-semibold ml-1" download>
+            {/* <a href="#" className="text-[#FF5722] font-semibold ml-1" download>
               Download PDF
-            </a>
+            </a> note: aktifkan jika ingin digunakan untuk download*/}
+            <span className="text-[#FF5722] font-semibold ml-1">
+              Download PDF
+            </span>
           </p>
         </motion.div>
 

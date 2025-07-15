@@ -4,7 +4,7 @@ import imgSection2 from '../../../assets/content_img/planebox2.jpg';
 
 const Section2 = () => {
   return (
-    <section className="relative container mx-auto px-8 mt-20 md:-mt-[1vw] pl-15">
+    <section className="relative container mx-auto px-4 md:-mt-[1vw] pl-15">
       <div className="flex gap-12 items-start">
         {/* Gambar menumpuk */}
         <motion.div

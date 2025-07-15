@@ -5,7 +5,7 @@ import logo from '../../../assets/logo_senandung/logo_mendatar_senandung.png';
 
 const Section1 = () => {
   return (
-    <section className="relative container mx-auto px-8 mt-15 h-[580px]">
+    <section className="relative w-full md:container mx-auto px-4 mt-15 h-fit sm:h-[580px]">
       <div className="flex h-full gap-12">
         {/* Gambar Kiri */}
         <motion.div
