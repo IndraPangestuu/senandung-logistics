@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../AboutUs/icon/logo_senandung.png";
+import logo from "../../assets/logo_senandung/logo_senandung.png";
 
 const listVariants = {
   hidden: { opacity: 0, y: 20 },

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import air from './icon/Pesawat.png';
-import sea from './icon/Kapal.png';
-import door from './icon/Truck.png';
+import air from '../../assets/icon/Pesawat.png';
+import sea from '../../assets/icon/Kapal.png';
+import door from '../../assets/icon/Truck.png';
 
 const services = [
   {

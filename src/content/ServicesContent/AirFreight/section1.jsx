@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import imgSection from '../../../assets/content_img/planebox1.jpg';
-import logo from '../../../assets/logo_mendatar_senandung.png';
+import logo from '../../../assets/logo_senandung/logo_mendatar_senandung.png';
 
 const Section1 = () => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer3d';
-import Section1 from '../content/Home/section13d';
-import Section2 from '../content/Home/section23d';
-import Section3 from '../content/Home/section33d';
-import heroImage from '../assets/hero1.jpg';
+import Footer from '../components/Footer';
+import Section1 from '../content/Home/section1';
+import Section2 from '../content/Home/section2';
+import Section3 from '../content/Home/section3';
+import heroImage from '../assets/hero_img/hero1.jpg';
 import HeroSection from '../components/HeroSection';
 import TempInactiveSection from '../components/TempInactiveSection';
 

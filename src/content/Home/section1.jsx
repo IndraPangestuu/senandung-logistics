@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import operator from "./icon/operator.jpg";
-import operator2 from "./icon/operator2.jpg";
+import operator from "../../assets/icon/operator.jpg";
+import operator2 from "../../assets/icon/operator2.jpg";
 
 const Section1 = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import iconAsia from "../AboutUs/icon/asia.png";
-import iconIndonesia from "../AboutUs/icon/indonesia.png";
-import icon24Hours from "../AboutUs/icon/24hours.png";
+import iconAsia from "../../assets/icon/asia.png";
+import iconIndonesia from "../../assets/icon/indonesia.png";
+import icon24Hours from "../../assets/icon/24hours.png";
 
 const section3 = () => {
   const commitments = [

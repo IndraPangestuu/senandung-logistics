@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../AboutUs/icon/logo_senandung.png";
-import containerImg1 from "../AboutUs/icon/container1.jpg";
-import containerImg2 from "../AboutUs/icon/container2.jpg";
+import logo from "../../assets/logo_senandung/logo_senandung.png";
+import containerImg1 from "../../assets/icon/container1.jpg";
+import containerImg2 from "../../assets/icon/container2.jpg";
 
 const Section2 = () => {
   const [activeTab, setActiveTab] = useState("vision");

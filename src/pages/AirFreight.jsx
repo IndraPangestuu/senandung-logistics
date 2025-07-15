@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/hero3.jpg';
+import heroImage from '../assets/hero_img/hero3.jpg';
 import Section1 from "../content/ServicesContent/AirFreight/section1";
 import Section2 from "../content/ServicesContent/AirFreight/section2";
 import Section3 from "../content/ServicesContent/AirFreight/section3";
 import MiddleImageStack from "../content/ServicesContent/middleImageStack";
 import TempInactiveSection from '../components/TempInactiveSection';
-import Footer from '../components/Footer3d'
+import Footer from '../components/Footer'
 
 function AirFreight() {
   return(

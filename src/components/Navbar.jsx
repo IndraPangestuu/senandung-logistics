@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo_mendatar_senandung.png';
+import logo from '../assets/logo_senandung/logo_mendatar_senandung.png';
 import { FaBars, FaTimes, FaHome, FaInfoCircle, FaCog, FaPhone } from 'react-icons/fa';
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
