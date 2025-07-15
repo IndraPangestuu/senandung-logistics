@@ -8,26 +8,25 @@ const Section2 = () => {
   const [activeTab, setActiveTab] = useState("vision");
 
   return (
-    <div className="bg-white text-gray-800 px-6 py-10 md:px-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+    <div className="text-gray-800 px-4 py-10 md:px-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center overflow-hidden">
       {/* KIRI: Judul dan Gambar Kontainer */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <p className="text-orange-500 font-semibold mb-2">Frequently Asked Questions</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 leading-snug mb-6">
-          Dynamic & Adaptive <br />
-          Transport Solutions
+        <p className="text-orange-500 font-semibold mb-2 text-sm md:text-base">Frequently Asked Questions</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 leading-snug mb-6 break-words">
+          Dynamic & Adaptive Transport Solutions
         </h2>
 
-        <div className="relative w-full max-w-sm">
-          <img src={containerImg1} alt="Kontainer" className="rounded-md mb-4" />
+        <div className="relative w-full max-w-xs md:max-w-xs lg:max-w-sm mx-auto overflow-hidden">
+          <img src={containerImg1} alt="Kontainer" className="rounded-md mb-4 w-full max-w-full" />
           <img
             src={containerImg2}
             alt="Kontainer 2"
-            className="rounded-md absolute bottom-[-10px] right-[-40px] w-60 shadow-md"
+            className="rounded-md absolute bottom-[-10px] right-[-10px] md:right-[-20px] lg:right-[-30px] w-32 md:w-40 lg:w-52 shadow-md max-w-full"
           />
         </div>
       </motion.div>
@@ -37,27 +36,27 @@ const Section2 = () => {
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        viewport={{ once: true, amount: "all" }}
-        className="text-sm md:text-base"
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-sm md:text-base flex flex-col md:items-center md:justify-center text-left md:text-center max-w-full px-[8%] md:px-0"
       >
         <div className="flex justify-center mb-4">
-          <img src={logo} alt="Logo PT Senandung Melodi Sejahtera" className="w-12 h-12 md:w-16 md:h-16" />
+          <img src={logo} alt="Logo PT Senandung Melodi Sejahtera" className="w-18 h-18 md:w-20 md:h-20 max-w-full" />
         </div>
 
-        <div className="flex justify-center space-x-6 border-b border-gray-300 pb-1 mb-4 text-sm font-semibold">
+        <div className="flex justify-center space-x-4 md:space-x-6 border-b border-gray-300 pb-2 mb-4 text-xs md:text-sm font-semibold overflow-x-auto max-w-full">
           <button
             onClick={() => setActiveTab("vision")}
-            className={`pb-1 transition-colors text-lg ${
+            className={`pb-1 transition-colors text-base md:text-lg ${
               activeTab === "vision"
                 ? "text-orange-500 border-b-2 border-orange-500"
                 : "text-blue-900"
             }`}
           >
-            Our Vission
+            Our Vision
           </button>
           <button
             onClick={() => setActiveTab("mission")}
-            className={`pb-1 transition-colors text-lg ${
+            className={`pb-1 transition-colors text-base md:text-lg ${
               activeTab === "mission"
                 ? "text-orange-500 border-b-2 border-orange-500"
                 : "text-blue-900"
@@ -70,11 +69,11 @@ const Section2 = () => {
         <AnimatePresence mode="wait">
           <motion.p
             key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="text-gray-700 leading-relaxed text-justify text-2xl"
+            className="text-gray-700 leading-relaxed text-justify md:text-center text-base md:text-xl break-words max-w-full"
           >
             {activeTab === "vision" ? (
               <>

@@ -12,7 +12,7 @@ const Section3 = () => {
           initial={{ opacity: 0, x: -30, scale: 0.95 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true, amount: "all" }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <h2 className="text-4xl font-bold text-[#0C2D57] md:leading-snug">
             Get the Best and Most Transparent Sea Freight Quote Today
@@ -33,8 +33,8 @@ const Section3 = () => {
           className="bg-[#FF5722] text-white rounded-xl shadow-md p-6 w-[240px] h-[300px] text-center flex flex-col justify-center"
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", stiffness: 80, damping: 10, delay: 0.3 }}
-          viewport={{ once: true, amount: "all" }}
+          transition={{ type: "spring", stiffness: 80, damping: 10, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.6 }}
         >
           <p className="text-md">Need Help ?</p>
           <p className="font-bold text-xl mt-1 mb-3 leading-tight">
