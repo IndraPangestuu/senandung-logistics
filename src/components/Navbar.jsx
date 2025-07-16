@@ -6,22 +6,36 @@ import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const navRef = useRef(null);
-  const dropdownTimeoutRef = useRef(null);
   const [isHover, setIsHover] = useState(false);
+  const [isBT, setIsBT] = useState(false);
+
+  const lastScrollTop = useRef(window.scrollY);
+  const dropdownTimeoutRef = useRef(null);
   const navigate = useNavigate();
+  const navRef = useRef(null);
 
   const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 50);
+    const currentScroll = window.scrollY;
+    setScrolled(currentScroll > 50);
+
+    if (currentScroll !== lastScrollTop.current) {
+      setTimeout(()=>{
+        setIsMobileMenuOpen(false);
+        setIsDropdownOpen(false);
+        setIsBT(false);
+        lastScrollTop.current = currentScroll;
+      }, 100)
+    }
   }, []);
 
   const handleClickOutside = useCallback((event) => {
     if (navRef.current && !navRef.current.contains(event.target)) {
       setIsMobileMenuOpen(false);
       setIsDropdownOpen(false);
+      setIsBT(false);
     }
   }, []);
 
@@ -51,19 +65,29 @@ const Navbar = () => {
     }, 200);
   };
 
+  const handleClick = (e, navigasi = '/', closeMenu = false) => {
+    e.preventDefault();
+    setTimeout(() => {
+      if (closeMenu) setIsDropdownOpen(false);
+      navigate(navigasi);
+    }, 200);
+  };
+
   const handleMouseEnter = useCallback(() => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
-    setIsDropdownOpen(true);
+    setTimeout(() => {
+      setIsDropdownOpen(true);
+    }, 100)
     setIsHover(true);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 200);
-    setIsHover(false);
+      setIsHover(false);
+    }, 100);
   }, []);
 
   useEffect(() => {
@@ -102,20 +126,33 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex text-md lg:text-lg space-x-2 font-medium">
           <motion.li whileHover={{ scale: 1.05, y: -2 }}>
-            <Link to="/" className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:shadow-lg transition-all">
+            <Link
+              to="/"
+              className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:transition-all active:bg-orange-100 active:shadow-lg"
+              onClick={(e) => handleClick(e)}>
               <FaHome className="mr-2" /> Home
             </Link>
           </motion.li>
 
           <motion.li
+            ref={navRef}
             className="relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => {if (!isBT) handleMouseEnter()}}
+            onMouseLeave={() => {if (!isBT) handleMouseLeave()}}
             whileHover={{ scale: 1.05, y: -2 }}
           >
             <button
-              className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:shadow-lg transition-all"
-              onClick={() => {if (!isHover) setIsDropdownOpen(!isDropdownOpen); setIsHover(false);}}
+              className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:transition-all active:bg-orange-100 active:shadow-lg"
+              onClick={() => {
+                if (!isHover) {
+                  setTimeout(() => {
+                    setIsDropdownOpen(!isDropdownOpen);
+                  }, 100)
+                  setIsHover(false);
+                  setIsBT(!isBT);
+                }
+              }}
+              disabled={isHover}
             >
               <FaCog className="mr-2" /> Services
               <FiChevronDown className={`ml-2 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -130,8 +167,8 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/services/AirFreight"
-                    className="block px-4 py-3 hover:bg-orange-100 transition"
-                    onClick={() => setIsDropdownOpen(false)}
+                    className="block px-4 py-3 hover:bg-orange-100 hover:transition active:bg-orange-100 active:shadow-lg"
+                    onClick={(e) => {handleClick(e, navigasi="/services/SeaFreight", closeMenu=true)}}
                   >
                     Air Freight
                   </Link>
@@ -139,18 +176,16 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/services/SeaFreight"
-                    className="block px-4 py-3 hover:bg-orange-100 transition"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
+                    className="block px-4 py-3 hover:bg-orange-100 hover:transition active:bg-orange-100 active:shadow-lg"
+                    onClick={(e) => {handleClick(e, navigasi="/services/SeaFreight", closeMenu=true)}}>
                     Sea Freight
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/services/DoorToDoor"
-                    className="block px-4 py-3 hover:bg-orange-100 transition"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
+                    className="block px-4 py-3 hover:bg-orange-100 hover:transition active:bg-orange-100 active:shadow-lg"
+                    onClick={(e) => {handleClick(e, navigasi="/services/SeaFreight", closeMenu=true)}}>
                     Door to Door
                   </Link>
                 </li>
@@ -159,13 +194,19 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li whileHover={{ scale: 1.05, y: -2 }}>
-            <Link to="/about" className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:shadow-lg transition-all">
+            <Link
+              to="/about"
+              className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:transition-all active:bg-orange-100 active:shadow-lg"
+              onClick={(e) => handleClick(e, '/about')}>
               <FaInfoCircle className="mr-2" /> About Us
             </Link>
           </motion.li>
 
           <motion.li whileHover={{ scale: 1.05, y: -2 }}>
-            <Link to="/contact" className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:shadow-lg transition-all">
+            <Link
+              to="/contact"
+              className="flex items-center px-4 py-2 rounded-xl hover:bg-orange-100 hover:transition-all active:bg-orange-100 active:shadow-lg"
+              onClick={(e) => handleClick(e, '/contact')}>
               <FaPhone className="mr-2" /> Contact Us
             </Link>
           </motion.li>
